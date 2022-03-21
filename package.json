@@ -1,0 +1,28 @@
+{
+  "name": "ticket-backend",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "env-cmd -e dev -r .env.json nodemon ./src/app.js",
+    "start": "env-cmd -e prod -r .env.json node ./src/app.js"
+  },
+  "keywords": [
+    "ticket"
+  ],
+  "author": "Mehrdad Dehghanzadeh",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^8.10.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.7"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "prettier": "2.6.0"
+  }
+}
