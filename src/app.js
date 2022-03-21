@@ -4,6 +4,7 @@ const config = require('./config/app-config')
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
+const conenctDB = require('./config/db')
 
 const app = express()
 
@@ -15,8 +16,10 @@ app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
-app.listen(config.port, () => {
-    console.log(
-        `server is runing at port:${config.port} for ${config.mode} mode`
-    )
+conenctDB(() => {
+    app.listen(config.port, () => {
+        console.log(
+            `server is runing at port:${config.port} for ${config.mode} mode`
+        )
+    })
 })
