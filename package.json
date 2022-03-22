@@ -1,14 +1,14 @@
 {
-  "name": "ticket-backend",
+  "name": "express-restful",
   "version": "0.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./src/app.js",
   "scripts": {
     "dev": "env-cmd -e dev -r .env.json nodemon ./src/app.js",
     "start": "env-cmd -e prod -r .env.json node ./src/app.js"
   },
   "keywords": [
-    "ticket"
+    "express-restful"
   ],
   "author": "Mehrdad Dehghanzadeh",
   "license": "MIT",
@@ -18,11 +18,26 @@
     "cors": "^2.8.5",
     "env-cmd": "^10.1.0",
     "express": "^4.17.3",
+    "module-alias": "^2.2.2",
     "mongoose": "^6.2.7"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "prettier": "2.6.0"
+  },
+
+  "_moduleAliases": {
+    "@": "./src",
+    "@@": ".",
+    "@config": "./src/config",
+    "@controllers": "./src/controllers",
+    "@middlewares": "./src/middlewares",
+    "@models": "./src/models",
+    "@routes": "./src/routes",
+    "@services": "./src/services",
+    "@utils": "./src/utils",
+    "@validations": "./src/validations"
   }
+
 }

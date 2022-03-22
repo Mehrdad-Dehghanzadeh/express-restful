@@ -1,5 +1,5 @@
 const path = require('path')
-const { isDev } = require('../utils/utils')
+const { isDev } = require('@utils/utils')
 
 const config = {
     port: isDev ? 1819 : 80,
