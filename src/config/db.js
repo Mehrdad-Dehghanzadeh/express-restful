@@ -4,13 +4,17 @@ const dbUri = `${process.env.DATABASE_URI}:${process.env.DATABASE_PORT}/${proces
 
 function conenctDB(callback) {
   mongoose
-    .connect(dbUri, {})
+    .connect(dbUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     .then(() => {
       console.log('\x1b[32mConencted to Database', '\x1b[0m')
       callback()
     })
     .catch((error) => {
       console.error(error)
+      process.exit(1)
     })
 }
 
