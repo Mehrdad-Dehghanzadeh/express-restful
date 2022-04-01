@@ -6,4 +6,11 @@ const process = require('process')
 const isDev = process.env.mode == 'development'
 const isProduction = process.env.mode == 'production'
 
-module.exports = { isDev, isProduction }
+/*
+ * Random Number
+ ****************************/
+function randomNumber(num = 1) {
+  return Math.random() * 10 ** num
+}
+
+module.exports = { isDev, isProduction, randomNumber }

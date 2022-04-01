@@ -6,7 +6,7 @@ function conenctDB(callback) {
   mongoose
     .connect(dbUri, {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+      useUnifiedTopology: true
     })
     .then(() => {
       console.log('\x1b[32mConencted to Database', '\x1b[0m')

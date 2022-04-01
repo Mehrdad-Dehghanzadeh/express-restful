@@ -28,6 +28,13 @@ function isEmpty(obj) {
 }
 
 /**
+ *  Check Object
+ ***************************/
+function isObject(A) {
+  return (typeof A === 'object' || typeof A === 'function') && A !== null
+}
+
+/**
  *  Convert Object To Array
  ***************************/
 function objectToArray(obj) {
@@ -49,18 +56,24 @@ function deepClone(obj) {
  * Create an object composed of the picked object properties
  ************************/
 function pick(object, keys) {
-  return keys.reduce((obj, key) => {
-    if (object && Object.prototype.hasOwnProperty.call(object, key)) {
-      // eslint-disable-next-line no-param-reassign
-      obj[key] = object[key]
-    }
+  if (isObject(object)) {
+    const obj = {}
+    keys.forEach((key) => {
+      if (key in object) {
+        obj[key] = object[key]
+      }
+    })
+
     return obj
-  }, {})
+  } else {
+    throw 'please enter object type'
+  }
 }
 
 module.exports = {
   deepFreeze,
   isEmpty,
+  isObject,
   objectToArray,
   deepClone,
   pick

@@ -20,7 +20,8 @@
     "env-cmd": "^10.1.0",
     "express": "^4.17.3",
     "module-alias": "^2.2.2",
-    "mongoose": "^6.2.7"
+    "mongoose": "^6.2.7",
+    "mongoose-sequence": "^5.3.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
